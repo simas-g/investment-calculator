@@ -1,18 +1,12 @@
-import { useState } from "react";
 
-export default function Calculator() {
-  const [data, setData] = useState({
-    initialInvestment: 10000,
-    annualInvestment: 2000,
-    expectedReturn: 6,
-    duration: 10,
-  });
+export default function Calculator({setData, data}) {
+
 
   function handleDataChange(inputIdentifier, newValue) {
     setData((prev) => {
       return {
         ...prev,
-        [inputIdentifier]: newValue,
+        [inputIdentifier]: +newValue,
       };
     });
   }
